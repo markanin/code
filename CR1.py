@@ -37,12 +37,9 @@ for j in range(1, length):
 
 # solve circuit:
 for j in range(1, length):
-
     q[j] = q[j - 1] + vi[j]*dt/R - q[j-1]*dt/(R*C)
     vc[j] = q[j]/C
-
-    if j > 0:
-        i[j] = ((q[j] - q[j - 1])/dt)*1e3 # convert to [mA]
+    i[j] = ((q[j] - q[j - 1])/dt)*1e3 # convert to [mA]
 
 # scale capacitor charge for easy plotting:
 qmax = C*1 # maximum charge in [Coulomb], absolute value
