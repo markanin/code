@@ -37,9 +37,7 @@ for j in range(1, length):
 # solve circuit:
 for j in range(1, length):
     i[j] = i[j - 1] + vi[j]*dt/L - i[j-1]*R*dt/L
-
-    if j > 0:
-        vl[j] = L*(i[j] - i[j - 1])/dt
+    vl[j] = L*(i[j] - i[j - 1])/dt
 
 # scale current for easy plotting:
 imax = 1/R # maximum current in [A], absolute value
